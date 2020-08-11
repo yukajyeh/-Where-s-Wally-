@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+    <title>Where's Wally?</title>
+    <link rel='icon' href='./Image/Hello.png' type='image/x-icon'>
+</head>
+
+<body>
+<marquee loop='-1' style='font-family:courier'>ウォーリーを探せ！Où est Charlie? 월리를 찾아라 尋找威利 Wo ist Walter? ¿Dónde está Wally? Waar is Wally?</marquee>
+<audio id='theme song'></audio>
+<div class='introduction'>
+  <div class='game-start'>
+     <img id='logo'src='./Image/pngwave.png' alt='Waldo-logo'>
+     <img id='logo2' src='./Image/wheres-wally-instant-kit-287609.png'alt='whereIsWally'>
+      <p>We know the game, You know the game.<br> 
+        Let's do this! Let's find Wally (...and Walda!) </p>
+     <form>
+            <button formaction="./game.html"  id="start-button">START GAME</button>
+     </form>
+  </div>
+</div>
+
+<embed name="where_wally" src="./Image/where_s_wally.mp3" loop="true" hidden="true" autostart="false">
+
+</body>
+</html>

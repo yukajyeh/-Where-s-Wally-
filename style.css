@@ -1,0 +1,131 @@
+body{
+   background-image:url('./Image/bw\ waldothumb.jpg');
+   background-repeat:repeat;
+   font-family: 'Optima';
+   font-style:normal;
+   color:white;
+  
+}
+
+p{
+   font-size:30px;
+   text-shadow: -1px 1px 2px #000,
+   1px 1px 2px #000,
+   1px -1px 0 #000,
+   -1px -1px 0 #000;
+}
+
+
+#logo{
+   width:12%;
+   height:20%;
+}
+
+#logo2{
+   width:350px;
+   margin-bottom:40px;
+}
+
+.introduction{
+   margin-top:30px;
+}
+
+.game-start{
+   display:column;
+   text-align:center;
+}
+
+#start-button{
+   padding: 10px 20px;
+   border-radius:2em;
+   font-size:20px;
+   font-family: 'Optima';
+}
+
+#start{
+   display:flex;
+   flex-direction:row;
+}
+
+.instruction{
+   display:flex;
+   float:right;
+}
+
+#pick-button{
+   padding:5px 10px;
+   border-radius:1em;
+   margin-top:10px;
+   font-weight:lighter;
+   font-family:'Courier'
+   
+}
+
+#return{
+   padding:5px 10px;
+   border-radius:1em;
+   margin-top:10px;
+   font-weight:lighter;
+   font-family:'Courier'
+  
+}
+
+#timer{
+   margin-top:25px;
+   font-size:35px;
+}
+
+#ta-da{
+   font-size:30px;
+   width:100%;
+}
+
+
+#wally-friend{
+   width:12%;
+}
+
+.pop-up{
+   position:absolute;
+   top:50%;
+   left:40%;
+   border:1px solid black;
+   border-radius:10px;
+   width:230px;
+   text-align:center;
+   transition:200ms ease-in-out; 
+}
+
+.hide{
+   display:none;
+}
+
+.active{
+   display:block;
+}
+
+.header{
+   padding:5px 15px;
+   display:flex;
+   margin-left:85%;
+}
+
+#waldo-head{
+   width:40%;
+   margin-bottom:5px;
+}
+
+#close-btn{
+   margin-top:5px;
+   cursor:pointer;
+   border:none;
+   outline:none;
+   background:none;
+}
+
+#nf-body{
+   display:column;
+   align-items:center;
+   left:50%;
+}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="//db.onlinewebfonts.com/c/2a5e4a9ca30bd999c020a6d40d14132a?family=Optima" rel="stylesheet" type="text/css"/>
+    <title>Let's Find Wally</title>
+    <link rel='icon' href='./Image/Hello.png' type='image/x-icon'>
+</head>
+<body>
+    <nav>
+    <div class='start'>
+     <img src='./Image/wally&friends.png' alt='wally-friends-icon' id='wally-friend'>
+     <button onclick="window.location.href='./index.html'; " id='return'>Main Page</button>
+     <button id="pick-button">Challenge</button>
+      <!--<h3 id='x-position'>X</h3> <h3 id='y-position'>Ｙ</h3>-->
+    </div>
+    <h4 class='instruction'>[click Challenge to Start and simply click on the image to locate Wally!]</h4>
+</nav>
+
+<div id='timer'></div>
+
+<div class='pop-up hide' id='pop-up'>
+    <div class='header'>
+    <button data-close-button id='close-btn'>&times;</button>
+    </div>
+
+    <div id='nf-body'>
+    <img id ='waldo-head' src='./Image/Waldo Head .png'/>
+    <p id="ta-da"></p>
+    </div>
+</div>
+
+
+
+<canvas id="canvas" width=1300 height=1200></canvas>
+<script src="game.js"></script>
+</body>
+</html>
