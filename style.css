@@ -4,7 +4,10 @@ body{
    font-family: 'Optima';
    font-style:normal;
    color:white;
-  
+}
+
+audio{
+   display:none;
 }
 
 p{
@@ -13,6 +16,8 @@ p{
    1px 1px 2px #000,
    1px -1px 0 #000,
    -1px -1px 0 #000;
+   line-height: 50px;
+   margin-top:0;
 }
 
 
@@ -42,37 +47,57 @@ p{
    font-family: 'Optima';
 }
 
-#start{
-   display:flex;
-   flex-direction:row;
+.start{
+  display:flex;
+  width:1000px;
+  justify-content:space-evenly;
 }
+
+#canvas{
+  position:relative;
+  top:15px;
+}
+
+#img{
+   width:20%;
+}
+
+#wally-friend{
+   width:200px;
+}
+
+#btns{
+   display:flex;
+   width:300px;
+   justify-content:space-between;
+}
+
+#btns button {
+   width: 200px;
+   height:30px;
+   border-radius:35px;
+   position:relative;
+   top:20px;
+   margin-right:10px;
+   font-weight:lighter;
+   font-size:15px;
+   font-family:'Courier'
+}
+
 
 .instruction{
-   display:flex;
-   float:right;
+   width:440px;
+   line-height:20px;
+   margin-bottom:0;
+   margin-top:15px;
 }
 
-#pick-button{
-   padding:5px 10px;
-   border-radius:1em;
-   margin-top:10px;
-   font-weight:lighter;
-   font-family:'Courier'
-   
-}
 
-#return{
-   padding:5px 10px;
-   border-radius:1em;
-   margin-top:10px;
-   font-weight:lighter;
-   font-family:'Courier'
-  
-}
-
-#timer{
-   margin-top:25px;
-   font-size:35px;
+#timer{  
+   position:absolute;
+   right:20px;
+   top:45px;
+   font-size:40px;
 }
 
 #ta-da{
@@ -81,14 +106,11 @@ p{
 }
 
 
-#wally-friend{
-   width:12%;
-}
-
 .pop-up{
    position:absolute;
    top:50%;
    left:40%;
+   z-index:1;
    border:1px solid black;
    border-radius:10px;
    width:230px;

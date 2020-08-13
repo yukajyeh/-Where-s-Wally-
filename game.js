@@ -6,11 +6,12 @@ const popUp = document.getElementById('pop-up');
 const closeBtn = document.getElementById('close-btn');
 const waldoFace = document.getElementById('waldo-head');
 
+
 let imgArray = [
    { name:'Wally1',
     url:'./Image/Waldo-Easy1.jpg',
-    positionX: 714,
-    positionY: 584
+    positionX: 703,
+    positionY: 5534
   },  
 
  { name:'Wally2',
@@ -29,7 +30,7 @@ let imgArray = [
   waldaPY:351
   },
 
-  { name:'Wally5',
+  { name:'Wally4',
   url:'./Image/Waldo-5.jpg',
   positionX: 313,
   positionY: 514
@@ -63,13 +64,12 @@ pickRandom(){
   this.pickedImage = randomImg;
   ctx.clearRect(0,0,1300,1200)
   wallyImage.onload= function () {
-  ctx.drawImage(wallyImage,200,-10)
+  ctx.drawImage(wallyImage,200,0)
   }
 }
 
 //mouse click event on Wally's whereabouts
 findWally(){
-  //console.log(this.pickedImage)
   canvas.addEventListener('click', event => {
     console.log(event)
     let imgX = this.pickedImage.positionX
@@ -79,42 +79,44 @@ findWally(){
     let userY = event.clientY
     const errorMargin = 10
     
-    function foundWally() {
-      document.getElementById("ta-da").innerHTML = 'You Found Me';
-      popUp.style.backgroundColor = '#00BFFF';
-      waldoFace.src='./Image/Waldo Head .png';
-    }
-    function tryAgain(){
-      document.getElementById("ta-da").innerHTML = 'Try Again';
-      popUp.style.backgroundColor = 'red';
-      waldoFace.src='./Image/sad waldo.png';
-    }
-
-    function foundWalda(){
-      document.getElementById("ta-da").innerHTML = 'Oh hi Walda!';
-      popUp.style.backgroundColor = '#ffbf00';
-      waldoFace.src='./Image/Walda.png';
-    }
-
     if(userX < imgX + errorMargin && userX > imgX - errorMargin){
       this.popUpWindow()
       this.closeWindow()
-      foundWally()
+      this.foundWally()
       
     } else {
       this.popUpWindow()
       this.closeWindow()
-      tryAgain()
+      this.tryAgain()
    } 
    
    if(userX < waldaX + errorMargin && userX > waldaX - errorMargin){
      console.log('Hi')
      this.popUpWindow()
      this.closeWindow()
-     foundWalda()
+     this.foundWalda()
    }
 
   })
+}
+
+//notification boxes
+foundWally() {
+  document.getElementById("ta-da").innerHTML = 'You Found Me';
+  popUp.style.backgroundColor = '#00BFFF';
+  waldoFace.src='./Image/Waldo Head .png';
+}
+
+tryAgain(){
+  document.getElementById("ta-da").innerHTML = 'Try Again';
+  popUp.style.backgroundColor = 'red';
+  waldoFace.src='./Image/sad waldo.png';
+}
+
+foundWalda(){
+  document.getElementById("ta-da").innerHTML = 'Oh hi Walda!';
+  popUp.style.backgroundColor = '#ffbf00';
+  waldoFace.src='./Image/Walda.png';
 }
 
 //Confirm Player if it's Wally
@@ -132,19 +134,24 @@ closeWindow(){
 })
 }
 
-
-//countdown from 30s
+//countdown from 60s
  timer(){
-  let sec = 60
+  let gameOver = new Image
+  gameOver.src='./Image/social-distancing.jpg'
+  let sec = 10
   let countDown = setInterval(function(){
     document.getElementById('timer').innerHTML = sec;
     sec--;
     if(sec == 0){
-      clearInterval(countDown)
       document.getElementById('timer').innerHTML = "Time's Up"
-    }
+      ctx.clearRect(200,0,canvas.height,canvas.width)
+      ctx.drawImage(gameOver,200,0)
+      clearInterval(countDown)
+    } 
   },1000);
-} 
+}  
+
+
 
 getCursorPosition(){
    canvas.addEventListener("mousemove", function(e) { 

@@ -10,17 +10,25 @@
     <link rel='icon' href='./Image/Hello.png' type='image/x-icon'>
 </head>
 <body>
-    <nav>
+   
     <div class='start'>
+    <div id='img'>
      <img src='./Image/wally&friends.png' alt='wally-friends-icon' id='wally-friend'>
-     <button onclick="window.location.href='./index.html'; " id='return'>Main Page</button>
-     <button id="pick-button">Challenge</button>
-      <!--<h3 id='x-position'>X</h3> <h3 id='y-position'>Ｙ</h3>-->
-    </div>
-    <h4 class='instruction'>[click Challenge to Start and simply click on the image to locate Wally!]</h4>
-</nav>
+     </div>
 
-<div id='timer'></div>
+     <div id='btns'>
+         <button onclick="window.location.href='./index.html'; " id='return'>Main Page</button>
+         <button id="pick-button">Challenge</button>
+    </div>
+
+    <div id='text'>
+     <h5 class='instruction'>A random picture will be selected once you click "Challenge"
+        When you find Wally/Walda, just click to locate! Good luck!</h5>
+    </div>
+    <div id='timer'></div>
+</div>
+
+<!--<h3 id='x-position'>X</h3> <h3 id='y-position'>Ｙ</h3>-->
 
 <div class='pop-up hide' id='pop-up'>
     <div class='header'>
