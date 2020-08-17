@@ -7,6 +7,7 @@ const closeBtn = document.getElementById('close-btn');
 const waldoFace = document.getElementById('waldo-head');
 
 
+
 let imgArray = [
    { name:'Wally1',
     url:'./Image/Waldo-Easy1.jpg',
@@ -37,15 +38,19 @@ let imgArray = [
   }, 
 ]
 
+let game;
 
 window.onload = () => {
     document.getElementById("pick-button").onclick = () => {
-        const game = new Game();
+      if(game != null){
+        game.clearCountdown();
+      }
+        game = new Game();
+        //console.log(game)
         game.pickRandom()
         //game.getCursorPosition()
         game.timer()
         game.findWally()
-        
     };
 }
 
@@ -54,6 +59,9 @@ class Game {
 constructor(){
     this.images = imgArray;
     this.pickedImage;
+    this.timeLeft = 60;
+    this.countDown;
+
 }
 
 //pick random image from an array
@@ -135,22 +143,26 @@ closeWindow(){
 }
 
 //countdown from 60s
- timer(){
+timer(){
   let gameOver = new Image
   gameOver.src='./Image/social-distancing.jpg'
-  let sec = 10
-  let countDown = setInterval(function(){
-    document.getElementById('timer').innerHTML = sec;
-    sec--;
-    if(sec == 0){
+  clearInterval(this.countDown);
+  this.countDown = setInterval(() => {
+    console.log(this.timeLeft);
+    document.getElementById('timer').innerHTML = this.timeLeft;
+    this.timeLeft--;
+    if (this.timeLeft == 0) {
       document.getElementById('timer').innerHTML = "Time's Up"
-      ctx.clearRect(200,0,canvas.height,canvas.width)
+      ctx.clearRect(200,0,canvas.height,canvas.width);
       ctx.drawImage(gameOver,200,0)
-      clearInterval(countDown)
-    } 
-  },1000);
-}  
+      clearInterval(this.countDown);
+  }
+},1000)
+}    
 
+clearCountdown = () =>{
+  clearInterval(this.countDown);
+};
 
 
 getCursorPosition(){
