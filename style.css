@@ -6,6 +6,10 @@ body{
    color:white;
 }
 
+iframe{
+   display:none;
+}
+
 audio{
    display:none;
 }
