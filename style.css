@@ -6,13 +6,12 @@ body{
    color:white;
 }
 
-iframe{
-   display:none;
-}
 
 audio{
-   display:none;
+   width:10%;
+   margin-left:15px;
 }
+
 
 marquee{
    color:white;
